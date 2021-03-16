@@ -1,0 +1,317 @@
+using  System ;
+usando o  sistema . Coleções . Genérico ;
+usando o  sistema . Linq ;
+usando o  sistema . Texto ;
+usando o  sistema . Threading . Tarefas ;
+
+namespace  I_Control_Ver_Plus
+{
+     programa de aula
+    {
+        público  estático  int  qtd  =  100 ;
+         string estática  pública [] Nomes = nova string [ qtd ];   
+        público  estático  int [] Bancs  =  new  int [ qtd ];
+
+        static  void  Main ( string [] args )
+        {
+            int  i , Banc , opcao_menu , varassento ;
+            string  Doc ;
+            DateTime  dta  =  DateTime . Agora ;
+
+            para ( i  =  0 ; i  <  qtd ; i ++ )
+            {
+                Console . WriteLine ();
+                Console . WriteLine ( " *********************************************** ********* " );
+                Console . WriteLine ( " * Sistema I-Control Plus * " );
+                Console . WriteLine ( " *********************************************** ********* " );
+                Console . WriteLine ( " * INFORME O CÓDIGO DA FUNÇÃO * " );
+                Console . WriteLine ( " * * " );
+                Console . WriteLine ( " * 1 - Reservar Para Professor * " );
+                Console . WriteLine ( " * 2 - Reservar para convidado * " );
+                Console . WriteLine ( " * 3 - Reservar Para PcD * " );
+                Console . WriteLine ( " * 4 - Reservar para público em geral * " );
+                Console . WriteLine ( " * 5 - Consultar cadeiras reservadas * " );
+                Console . WriteLine ( " * 6 - Sortear cadeira * " );
+                Console . WriteLine ( " * * " );
+                Console . WriteLine ( " *********************************************** ********* " );
+                Console . WriteLine ();
+
+                string  opcao_digitada  =  Converter . ToString ( Console . ReadLine ());
+
+                opcao_menu  =  Converter . ToInt32 ( opcao_digitada );
+
+                if ( opcao_menu  <  1  ||  opcao_menu  >  6 )
+                {
+                    Console . WriteLine ( " Opção inválida! " );
+                    Console . WriteLine ( " Pressione qualquer tecla para continuar ... " );
+                    Console . ReadKey ();
+
+                    continue ;
+                }
+
+                switch ( opcao_menu )
+                {
+
+                    caso  1 :
+                        enquanto ( verdadeiro )
+                        {
+                            if ( opcao_menu  > =  1  ||  opcao_menu  <=  4 )
+                            {
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu nome: " );
+                                Nomes [ i ] =  Console . ReadLine ();
+
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu documento: " );
+                                Doc  =  Console . ReadLine ();
+                            }
+                            Console . WriteLine ();
+                            Console . WriteLine ();
+                            Console . WriteLine ( " Informe o assento de 1 a 10 " );
+                            varassento  =  Converter . ToInt32 ( Console . ReadLine ());
+                            if ( Verifica ( varassento , opcao_menu ) ==  true )
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( Nomes [ i ] +  " Seu assento é "  +  Bancs [ i ] +  "    "  +  dta );
+                                Console . WriteLine ();
+                                pausa ;
+                            }
+                            outro
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( " Erro - O assento já está reservado para outra pessoa! " );
+                                Console . WriteLine ( " Pressione qualquer tecla para continuar ... " );
+                                Console . ReadKey ();
+                                pausa ;
+                            }
+                        }
+                        pausa ;
+
+                    caso  2 :
+                        enquanto ( verdadeiro )
+                        {
+                            if ( opcao_menu  > =  1  ||  opcao_menu  <=  4 )
+                            {
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu nome: " );
+                                Nomes [ i ] =  Console . ReadLine ();
+
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu documento: " );
+                                Doc  =  Console . ReadLine ();
+                            }
+                            Console . WriteLine ();
+                            Console . WriteLine ();
+                            Console . WriteLine ( " Informe o assento de 11 a 20 " );
+                            varassento  =  Converter . ToInt32 ( Console . ReadLine ());
+
+                            if ( Verifica ( varassento , opcao_menu ) ==  true )
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( Nomes [ i ] +  " Seu assento é "  +  Bancs [ i ] +  "    "  +  dta );
+                                Console . WriteLine ();
+                                pausa ;
+                            }
+                            outro
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( " Erro - O assento já está reservado para outra pessoa! " );
+                                Console . WriteLine ( " Pressione qualquer tecla para continuar ... " );
+                                Console . ReadKey ();
+                                pausa ;
+                            }
+
+                        }
+                        pausa ;
+
+                    caso  3 :
+                        enquanto ( verdadeiro )
+                        {
+                            if ( opcao_menu  > =  1  ||  opcao_menu  <=  4 )
+                            {
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu nome: " );
+                                Nomes [ i ] =  Console . ReadLine ();
+
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu documento: " );
+                                Doc  =  Console . ReadLine ();
+                            }
+                            Console . WriteLine ();
+                            Console . WriteLine ();
+                            Console . WriteLine ( " Informe o assento de 21 a 30 " );
+                            varassento  =  Converter . ToInt32 ( Console . ReadLine ());
+                            if ( Verifica ( varassento , opcao_menu ) ==  true )
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( Nomes [ i ] +  " Seu assento é "  +  Bancs [ i ] +  "    "  +  dta );
+                                Console . WriteLine ();
+                                pausa ;
+                            }
+                            outro
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( " Erro - O assento já está reservado para outra pessoa! " );
+                                Console . WriteLine ( " Pressione qualquer tecla para continuar ... " );
+                                Console . ReadKey ();
+                                pausa ;
+                            }
+                        }
+                        pausa ;
+
+                    caso  4 :
+                        enquanto ( verdadeiro )
+                        {
+                            if ( opcao_menu  > =  1  ||  opcao_menu  <=  4 )
+                            {
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu nome: " );
+                                Nomes [ i ] =  Console . ReadLine ();
+
+                                Console . WriteLine ();
+                                Console . WriteLine ( " Informe seu documento: " );
+                                Doc  =  Console . ReadLine ();
+                            }
+                            Console . WriteLine ();
+                            Console . WriteLine ();
+                            Console . WriteLine ( " Informe o assento de 31 a 100 " );
+                            varassento  =  Converter . ToInt32 ( Console . ReadLine ());
+                            if ( Verifica ( varassento , opcao_menu ) ==  true )
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( Nomes [ i ] +  " Seu assento é "  +  Bancs [ i ] +  "    "  +  dta );
+                                Console . WriteLine ();
+                                pausa ;
+                            }
+                            outro
+                            {
+                                Console . WriteLine ();
+                                Bancs [ i ] =  varassento ;
+                                Console . WriteLine ( " Erro - O assento já está reservado para outra pessoa! " );
+                                Console . WriteLine ( " Pressione qualquer tecla para continuar ... " );
+                                Console . ReadKey ();
+                                pausa ;
+                            }
+                        }
+                        pausa ;
+
+
+                    caso  5 :
+                        enquanto ( verdadeiro )
+                        {
+
+                            Console . Write ( " Informe o assento que deseja informação: " );
+                            Banc  =  Converter . ToInt32 ( Console . ReadLine ());
+
+                            para ( i  =  0 ; i  <=  4 ; i ++ )
+                            {
+                                if ( Bancs [ i ] ==  Banc )
+                                {
+                                    Console . WriteLine ( " Assento "  +  Banc  +  " é: "  +  Nomes [ i ]);
+
+                                }
+
+
+
+                            }
+                            pausa ;
+                        }
+                        pausa ;
+
+                    // sorteio
+                    caso  6 :
+                        enquanto ( verdadeiro )
+                        {
+                            int  assento_sorteado  =  0 ;
+                            Random  rnd  =  novo  Random ();
+                            assento_sorteado  =  rnd . Próximo ( i );
+                                                       
+                            
+
+                                if ( ! ( Bancs [ assento_sorteado ] > =  11  &&  Bancs [ assento_sorteado ] <=  20 ))
+                                {
+                                    Console . WriteLine ( " Numer sorteado = banco: "  +  Bancs [ assento_sorteado ] +  " nome: "  +  Nomes [ assento_sorteado ]);
+                                    Console . ReadKey ();
+                                    Meio Ambiente . Sair ( - 1 );
+
+                                }
+                            
+
+                            
+                           
+
+                        }
+
+                }
+
+                Console . ReadKey ();
+                Console . Limpar ();
+
+
+            }
+
+
+        }
+
+        static  Boolean  Verifica ( int  x , int  PPP )
+        {
+            Boolean  esta_disponivel ;
+             Continua booleano ;
+            int  i ;
+            continua  =  falso ;
+
+            if ( PPP  ==  1 )
+            {
+                if ( x  > =  1  &&  x  <=  10 )
+                {
+                    continua  =  verdadeiro ;
+                }
+            }
+            else  if ( PPP  ==  2 )
+            {
+                if ( x  > =  11  &&  x  <=  20 )
+                {
+                    continua  =  verdadeiro ;
+                }
+            }
+            else  if ( PPP  ==  3 )
+            {
+                if ( x  > =  21  &&  x  <=  30 )
+                {
+                    continua  =  verdadeiro ;
+                }
+            }
+            outro
+            {
+                if ( x  > =  31  &&  x  <=  100 )
+                {
+                    continua  =  verdadeiro ;
+                }
+            }
+
+
+            esta_disponivel  =  continua ;
+            if ( continua )
+            {
+                para ( i  =  0 ; i  <  qtd ; i ++ )
+                {
+                    if ( x  ==  Bancs [ i ])
+                    {
+                        esta_disponivel  =  false ;
+                        pausa ;
+                    }
+                }
+            }
+
+            return  esta_disponivel ;
+        }
+
+    }
+} 
